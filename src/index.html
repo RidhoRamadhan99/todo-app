@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.18.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="./style/output.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"/>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="res/favicon.ico" />
+    <title>To Do-List</title>
+  </head>
+  <body>
+<div class="flex flex-col items-center justify-center min-h-screen mb-60">
+  <div class="flex flex-col items-center justify-center gap-3 mb-5">
+    <div class="box-border w-32 h-32 p-4 text-lg font-bold text-black border-4 " id="current-date-time">Jumat, 17 Juni 2024 pukul 11.03.22</div>
+    <div class="profile-info">
+      <input type="text" id="user-name" placeholder="Nama Pengguna" value="Ridho Ramadhan">
+      <input type="text" id="user-position" placeholder="Posisi" value="Front-End Developer">
+    </div>
+  </div>
+  <div class="container p-4 mx-auto bg-gray-800 rounded-lg shadow-lg">
+      <header>
+        <h1>To Do-List</h1>
+        <div class="alert-message"></div>
+        <div class="input-section">
+          <input
+            type="text"
+            placeholder="Add a todo . . ."
+            class="w-full max-w-xs input input-bordered input-secondary"
+          />
+          <input
+            type="date"
+            class="w-full max-w-xs input input-bordered input-secondary schedule-date"
+          />
+          <select
+            class="w-full max-w-xs input input-bordered input-secondary priority-select"
+          >
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <button class="btn btn-secondary add-task-button">
+            <i class="bx bx-plus bx-sm"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="todos-filter">
+        <div class="dropdown">
+          <label tabindex="0" class="m-1 btn">Filter</label>
+          <ul
+            tabindex="0"
+            class="p-2 shadow dropdown-content menu bg-base-100 rounded-box w-52"
+          >
+            <li onclick="filterTodos('all')"><a>All</a></li>
+            <li onclick="filterTodos('pending')"><a>Pending</a></li>
+            <li onclick="filterTodos('completed')"><a>Completed</a></li>
+          </ul>
+        </div>
+        <button class="btn btn-secondary delete-all-btn">Delete All</button>
+      </div>
+
+      <table class="table w-full">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody class="todos-list-body"></tbody>
+      </table>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
